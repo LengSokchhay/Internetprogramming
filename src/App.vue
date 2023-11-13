@@ -1,19 +1,34 @@
 <template>
   <div class="flex flex-col">
-      <div class="flex flex-row mt-10 w-[1586px] h-[185px] m-auto justify-center items-center">
+    <Featurecategory></Featurecategory>
+    <div class="flex flex-row mt-10 w-[1586px] h-[185px] m-auto justify-center items-center">  
       <Category :class="fruit.Bg" v-for="(fruit, index) in fruits" :key="index" :image="fruit.ImageUrl"  :description="fruit.Description" :name="fruit.name"></Category>
-      </div>
-      <div class="flex justify-center">
-        <Promotion :class="promotion.Bg" v-for="(promotion, index) in promotions" :bg1="promotion.Bg1" :key="index" :image="promotion.ImageUrl" :description="promotion.Description" :name="promotion.name"></Promotion>
-      </div>
+    </div>
+    <div class="flex justify-center">
+      <Promotion :class="promotion.Bg" v-for="(promotion, index) in promotions" :bg1="promotion.Bg1" :key="index" :image="promotion.ImageUrl" :description="promotion.Description" :name="promotion.name"></Promotion>
+    </div>
+    <div class="flex mt-20 justify-between items-center">
+      <Popular class="ml-[160px] text-3xl" v-for="(popular, index) in Populars" :key="index" :name="popular.name" ></Popular>
+      <div class="flex flex-row mr-[140px]">
+        <Popular class="mr-5 text-xl" v-for="(menu, index) in Menus" :key="index" :name="menu.name" :bold="menu.bold"></Popular>
+      </div> 
+    </div>
+    <div class="flex ml-[160px] mt-10 ">
+      <Group v-for="(group, index) in Groups" :key="index" :image="group.ImageUrl" :name="group.name" :description="group.description" :kg="group.kg" :discountprice="group.discountprice" :cost="group.cost" :discount="group.discount" :color="group.color" :bg1="group.bg1"></Group>
+    </div>
+    <div class="flex ml-[160px] mt-10 ">
+      <Group v-for="(group, index) in Groups1" :key="index" :image="group.ImageUrl" :name="group.name" :description="group.description" :kg="group.kg" :discountprice="group.discountprice" :cost="group.cost" :discount="group.discount" :color="group.color" :bg1="group.bg1"></Group>
+    </div>
   </div>
   
 </template>
 
 <script setup>
+  import Group from "./components/Group.vue"
+  import Popular from "./components/Popular.vue";
   import Category from "./components/Category.vue";
   import Promotion from "./components/Promotion.vue";
-  import Button from "./components/Button.vue";
+  import Featurecategory from "./components/FeatureCategory.vue";
   import img1 from "./assets/images/1.png";
   import img2 from "./assets/images/2.png";
   import img3 from "./assets/images/3.png";
@@ -27,7 +42,142 @@
   import img11 from "./assets/images/11.png";
   import img12 from "./assets/images/12.png";
   import img13 from "./assets/images/13.png";
+  import img14 from "./assets/images/14.png";
+  const Groups = [
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "17%",
+      cost: "2.8$",
+      bg1: "bg-green-400",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "Hot",
+      cost: "2.8$",
+      color: "red",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "Sale",
+      cost: "2.8$",
+      color: "Orange",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "17%",
+      cost: "2.8$",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "17%",
+      cost: "2.8$",
+    },
+    
+  ]
+  const Groups1 = [
+    {
+      ImageUrl: img12,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "17%",
+      cost: "2.8$",
+      bg1: "bg-green-500",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "Hot",
+      cost: "2.8$",
+      color: "red",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "Sale",
+      cost: "2.8$",
+      color: "Orange",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "17%",
+      cost: "2.8$",
+    },
+    {
+      ImageUrl: img14,
+      name: "Hodo Foods",
+      description: "Seeds of Chnange Organic Quinoa, Brown, & Red Rice",
+      kg: "500 gram",
+      discountprice: "2.51$",
+      discount: "17%",
+      cost: "2.8$",
+    },
+    
+  ]
 
+  const Menus = [
+    {
+    name: "All",
+    bold: "bold"
+    },
+    {
+    name: "Milk & Daries",
+    },
+    {
+    name: "Coffees & Teas",
+    },
+    {
+    name: "Pet Foods",
+    },
+    {
+    name: "Meats",
+    },
+    {
+    name: "Vegetable",
+    },
+    {
+    name: "Fruits",
+    }
+  ]
+
+  const Populars = [
+    {
+      name: "Popular Products",
+    },
+    
+    
+  ]
 
   const promotions = [
     {
