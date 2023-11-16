@@ -9,16 +9,24 @@
       <Promotion :class="promotion.color" v-for="promotion in prom" :image="promotion.image" :description="promotion.title" :bg="promotion.bg"></Promotion>
     </div>
     <Menu title="Fearture Category"></Menu>
-    <Product v-for="product in products" :image= "product.image" :name="product.name" :tag="product.tag" 
+    <div class="flex flex-col ">
+      <div class="flex flex-row gap-[20px]">
+        <Product v-for="product in products" :image= "product.image" :name="product.name" :tag="product.tag" 
               :rate="product.rate" :description="product.description" :discountPrice="product.discountPrice"
-              :cost="product.sellPrice" :buy="product.buy"
-    ></Product>
+              :cost="product.sellPrice" :buy="product.buy" :color="product.color">
+      </Product>
+      </div>
+      <div class="flex flex-row gap-[20px] mt-[10px]">
+        <Product v-for="product in products2" :image= "product.image" :name="product.name" :tag="product.tag" 
+              :rate="product.rate" :description="product.description" :discountPrice="product.discountPrice"
+              :cost="product.sellPrice" :buy="product.buy" :color="product.color">
+      </Product>
+      </div>
+      
+    </div>
+    
   </div>
 </template>
-
-
-
-
 
 
 
@@ -45,7 +53,8 @@
     computed: {
       ...mapState(useEStore,['prom']),
       ...mapState(useEStore,['categories']),
-      ...mapState(useEStore,['products'])
+      ...mapState(useEStore,['products']),
+      ...mapState(useEStore,['products2'])
     },
     
   }

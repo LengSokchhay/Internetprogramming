@@ -1,6 +1,5 @@
 <template>
-    
-    <div class="flex flex-col w-[298px] h-[402px] bg-white border-[1px] rounded-lg ml-2">
+    <div class="flex flex-col w-[298px] h-[402px] bg-white border-[1px] rounded-lg">
         <div class="flex relative top-[20px] w-[58px] h-[32px] bg-green-400 text-white justify-center items-center rounded-r-full" :style="'background-color: ' + color">{{ tag}}</div>
         <img class="relative top-[35px] left-[42px] w-[201px] h-[144px]" :src="image" :alt="image">
         <div class="mt-14 ml-[15px]">

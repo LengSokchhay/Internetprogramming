@@ -13,7 +13,18 @@ import img8 from '../assets/cat-15 1.png'
 import img9 from '../assets/cat-14 1.png'
 import img10 from '../assets/cat-7 1.png'
 
+
+
 import Pimg1 from '../assets/18 1.png'
+import Pigm2 from '../assets/1.png'
+import Pigm3 from '../assets/2.png'
+import Pigm4 from '../assets/3.png'
+import Pigm5 from '../assets/4.png'
+import Pigm6 from '../assets/5.png'
+import Pigm7 from '../assets/6.png'
+import Pigm8 from '../assets/7.png'
+import Pigm9 from '../assets/8.png'
+import Pigm10 from '../assets/9.png'
 
 import { defineStore  } from 'pinia'
 
@@ -119,7 +130,7 @@ export const useEStore = defineStore('todoList', {
       ],
       products: [
         {        
-          id: 1,        
+          id: '1',        
           tag: "-17%",       
           image: Pimg1,        
           category: 3,        
@@ -128,9 +139,139 @@ export const useEStore = defineStore('todoList', {
           description: "500 gram",       
           sellPrice: "3",        
           discountPercentage: 17,       
-          discountPrice: "2.57",
+          discountPrice: "$2.57",
           buy: "1",
+          
+        },
+        {        
+          id: '2',        
+          tag: "Hot",       
+          image: Pigm2,        
+          category: 3,        
+          name: "All Natural Italian-Style Chicken Meatballs",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "red"
+        },
+        {        
+          id: '3',        
+          tag: "Sale",       
+          image: Pigm3,        
+          category: 3,        
+          name: "Angle's Boomchickapop Sweet & Salty Kettle Corn",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "orange",
+        },
+        {        
+          id: '4',        
+          tag: "",       
+          image: Pigm4,        
+          category: 3,        
+          name: "Foster Farms Takeout Crispy Classic Buffalo Wings",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "white",
+        },
+        {        
+          id: '5',        
+          tag: "",       
+          image: Pigm5,        
+          category: 3,        
+          name: "Blue Daimond Almonds Lightly Salted Vegetables",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "white",
+        }      
+      ],
+      products2: [
+        {        
+          id: '6',        
+          tag: "",       
+          image: Pigm6,        
+          category: 3,        
+          name: "Chovani Complete Vanilla Greek Yogurt",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "1",
+          color: "white",
+        },
+        {        
+          id: '7',        
+          tag: "Sale",       
+          image: Pigm7,        
+          category: 3,        
+          name: "Canada Dry Ginger Ale -2L Bottle- 200ml -400g",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "Yellow",
+        },
+        {        
+          id: '8',        
+          tag: "",       
+          image: Pigm8,        
+          category: 3,        
+          name: "Encore Seafood Stuffed Alaskan Salmon",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "white",
+        },
+        {        
+          id: '9',        
+          tag: "",       
+          image: Pigm9,        
+          category: 3,        
+          name: "Gorton's Beer Battered Fish Filleds with soft paper",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "white",
+        },
+        {        
+          id: '10',        
+          tag: "Hot",       
+          image: Pigm10,        
+          category: 3,        
+          name: "Haagen-Das Caramel Cone Ice Cream Ketchup",        
+          rate: 4,        
+          description: "500 gram",       
+          sellPrice: "3",        
+          discountPercentage: 17,       
+          discountPrice: "$2.57",
+          buy: "0",
+          color: "red",
         }
+        
       ]
      
     }),
