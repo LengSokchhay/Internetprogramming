@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{str_replace('_','_', app()->getLocale())}}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        .container {
+            margin: 50px auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    Welcome {{ $name}}
-    <br>
-    id {{$id}}
-    <br>
-    token {{$token}}
+    <div class="container">
+        <h3>Welcome to Ecommerce Backend Server</h3>
+        <h5>
+            Powered by Laravel v.10 <br>
+            Version 0.1
+        </h5>
+    </div>
 </body>
 </html>

@@ -6,59 +6,17 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->category_id = $request->input('category_id');
+        $product->pricing = $request->input('pricing'); // Assuming pricing is part of the request
+        $product->description = $request->input('description'); // Assuming description is part of the request
+        $product->images = $request->input('images'); // Assuming images is part of the request
+        // Add more fields as needed
+        $product->save();
+    
+        return "Product created successfully";
     }
 }

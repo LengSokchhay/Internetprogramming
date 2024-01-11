@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,7 @@ Route::patch('/categories' , function (Request $request){
 Route::delete('/categories' , function (Request $request) {
     return "Delete 1 Category";
 });
+
+Route::get('/products', [ProductController::class, 'index']);
+
+Route::post('/products', [ProductController::class, 'store']);
