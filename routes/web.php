@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TodoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,24 @@ Route::get('/dashboard/clients', function (Request $request) {
     ]);
 })->middleware(['auth'])->name('dashboard.clients');
 require __DIR__.'/auth.php';
+
+// Route::get('/home', [HomeController::class, 'renderHome']);
+// Route::get('/products/add', [ProductController::class, 'add']);
+// Route::get('/products/edit', [ProductController::class, 'edit']);
+// Route::get('/products/store', [ProductController::class, 'store']);
+
+
+Route::get('/todo', [TodoController::class, 'index']);
+Route::get('/todo/add', [TodoController::class, 'add']);
+Route::get('/todo/edit', [TodoController::class, 'edit']);
+Route::post('/todo/store', [TodoController::class, 'store']);
+
+Route::get('/products', [TodoController::class, 'index1']);
+Route::get('/products/add', [TodoController::class, 'add1']);
+Route::get('/products/edit', [TodoController::class, 'edit1']);
+Route::post('/products/store', [TodoController::class, 'store1']);
+
+Route::get('/home', [HomeController::class, 'renderHome']);
 
 // Route::get('/home', function () {
 //     $menus = ["Home", "Product", "Category", "Blog"];
