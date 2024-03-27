@@ -6,9 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-
-    <x-category :products="$products"/>
+    <div class="product">
+        <x-category :products="$products"/>
+        
+    </div>
     <x-panel :products="$products"/>
+
+    <div class=product1>
     <x-product :products="$products"/>
+    </div>
+    
+    
 </body>
 </html>

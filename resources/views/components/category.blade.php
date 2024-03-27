@@ -1,18 +1,28 @@
-<div>
-    @foreach($products as $product)
+
+@for($i=0; $i<sizeof($products); $i++)
+<div class="category">
+    
+    
         <div class="outer-div">
             <div class="custom-div">
-                <img class="custom-image" src="{{ asset('storage/' . $product->image_url) }}" />
-                <h3 class="custom-heading">{{ $product->name }}</h3>
-                <p class="custom-paragraph">{{ $product->description }}</p>
+                @if($products[$i]["name"] != null)
+                    <image width="200px" src="/{{ str_replace('public', 'storage', $products[$i]["image_url"])}}" />
+                @endif
+                <h3 class="custom-heading">{{ $products[$i]->name }}</h3>
+                <p class="custom-paragraph">{{ $products[$i]->description }}</p>
             </div>
-        </div>
-    @endforeach
-
+        </div>             
+    
 </div>
+@endfor
+
 
 
 <style>
+.category {
+    display: flex;
+  flex-direction: row;
+}
 .outer-div {
     width: 200px;
     height: auto;

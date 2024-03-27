@@ -1,8 +1,13 @@
-<div>
+<div class="product">
     @foreach($products as $product)
+    
+    @endforeach
+    @for($i=0; $i<sizeof($products); $i++)
     <div class="product-card">
         <div class="tag">tag</div>
-        <img class="custom-image" src="{{ asset('storage/' . $product->images) }}" />
+        @if($products[$i]["name"] != null)
+                    <image width="250px" src="/{{ str_replace('public', 'storage', $products[$i]["image_url"])}}" />
+                @endif
         <div class="product-details">
             <p class="brand">Fudo food</p>
             <p class="product-name">Seeds of Change Organic Quinoa, Brown, & Red Rice</p>
@@ -28,10 +33,14 @@
                 </div>
             </div>
         </div>
-    </div>
-    @endforeach
+    </div>            
+    @endfor
 </div>
 <style>
+.product {
+    display: flex;
+    flex-direction: row;
+}
 .product-card {
     display: flex;
     flex-direction: column;

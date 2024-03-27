@@ -1,7 +1,11 @@
 <div>
     @foreach($products as $product)
+    
+    @endforeach
+    
+    @for($i=0; $i<sizeof($products); $i++)
     <div class="container">
-    <img class="custom-image" src="{{ asset('storage/' . $product->images) }}" />
+    <image width="300px" src="/{{ str_replace('public', 'storage', $products[$i]["image_url"])}}" />
         <div class="content">
             <div class="title">
                 Everyday Fresh & Clean with our Product
@@ -13,8 +17,8 @@
                 </svg>
             </div>
         </div>
-    </div>
-    @endforeach
+    </div>           
+    @endfor
 </div>
 <style>
 .container {
